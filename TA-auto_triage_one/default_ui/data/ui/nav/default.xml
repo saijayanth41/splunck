@@ -1,0 +1,7 @@
+<nav>
+  <view name="auto_triage_dashboard" default="true" />
+  <view name="performance_analytics" />
+  <view name="error_analysis" />
+  <view name="template_gallery" />
+  <view name="system_health" />
+</nav>

@@ -1,0 +1,13 @@
+<dashboard>
+  <label>Payload Template Gallery</label>
+  <row>
+    <panel>
+      <title>Available Templates</title>
+      <table>
+        <search>
+          <query>| inputlookup template_library.csv</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

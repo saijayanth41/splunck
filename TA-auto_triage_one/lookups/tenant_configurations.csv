@@ -1,0 +1,4 @@
+tenant_id,system,base_url,auth_method,username,password
+acme_corp,servicenow,https://acme.service-now.com,basic_auth,admin_acme,acme_secret
+globex,jira,https://globex.atlassian.net,basic_auth,globex_user,globex_token
+initech,pagerduty,https://api.pagerduty.com,token,initech_user,initech_token

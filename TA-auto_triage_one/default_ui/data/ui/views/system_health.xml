@@ -1,0 +1,13 @@
+<dashboard>
+  <label>System Health</label>
+  <row>
+    <panel>
+      <title>Recent Activity</title>
+      <table>
+        <search>
+          <query>| inputlookup metrics_log.json | head 20</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

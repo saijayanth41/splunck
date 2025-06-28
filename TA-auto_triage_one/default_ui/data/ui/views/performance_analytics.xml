@@ -1,0 +1,17 @@
+<dashboard>
+  <label>Performance Analytics</label>
+  <row>
+    <panel>
+      <title>Average Processing Time</title>
+      <chart>
+        <search>
+          <query>
+            | inputlookup metrics_log.json 
+            | stats avg(processing_time_ms) by alert_name
+          </query>
+        </search>
+        <option name="charting.chart">bar</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

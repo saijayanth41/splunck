@@ -1,0 +1,18 @@
+<dashboard>
+  <label>Auto-Triage One: Incident Dashboard</label>
+  <row>
+    <panel>
+      <title>Live Incident Queue</title>
+      <table>
+        <search>
+          <query>
+            | inputlookup sample_alerts.csv 
+            | eval _time=now() 
+            | autotriage threshold=70 model=ensemble enrich=true 
+            | sort -auto_triage_score
+          </query>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

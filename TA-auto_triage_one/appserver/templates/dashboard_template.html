@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Triage One: Elite Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #dceefb, #f3f4f6);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1400px;
+    }
+    .dashboard-header {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-align: center;
+      margin: 2rem 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .card-panel {
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      background: #ffffff;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-panel:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+    .card-panel::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+      animation: pulse 10s infinite;
+      z-index: 0;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0); }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .panel-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1d4ed8;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+    .icon-header {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: #0ea5e9;
+      transition: transform 0.3s;
+    }
+    .card-panel:hover .icon-header {
+      transform: rotate(15deg);
+    }
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: #64748b;
+      z-index: 2;
+    }
+    @media (max-width: 768px) {
+      .card-panel { margin: 15px 0; }
+      iframe { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="dashboard-header">🧠 Auto-Triage One – Intelligent Incident Dashboard</h2>
+
+    <div class="card-panel">
+      <div class="panel-title"><i class="fas fa-list icon-header"></i>Live Incident Queue</div>
+      <iframe src="/app/TA-auto_triage_one/auto_triage_dashboard" title="Live Incident Queue" loading="lazy"></iframe>
+      <div class="loading" id="loading1">Loading...</div>
+    </div>
+
+    <div class="card-panel">
+      <div class="panel-title"><i class="fas fa-chart-pie icon-header"></i>Risk Severity Breakdown</div>
+      <iframe src="/app/TA-auto_triage_one/performance_analytics" title="Risk Severity Breakdown" loading="lazy"></iframe>
+      <div class="loading" id="loading2">Loading...</div>
+    </div>
+
+    <div class="card-panel">
+      <div class="panel-title"><i class="fas fa-brain icon-header"></i>ML Confidence Overview</div>
+      <iframe src="/app/TA-auto_triage_one/error_analysis" title="ML Confidence Overview" loading="lazy"></iframe>
+      <div class="loading" id="loading3">Loading...</div>
+    </div>
+
+    <div class="card-panel">
+      <div class="panel-title"><i class="fas fa-globe-americas icon-header"></i>Geo-Distributed Threat Map</div>
+      <iframe src="/app/TA-auto_triage_one/system_health" title="Geo-Distributed Threat Map" loading="lazy"></iframe>
+      <div class="loading" id="loading4">Loading...</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Hide loading indicators when iframes load
+    document.querySelectorAll('iframe').forEach((iframe, index) => {
+      iframe.addEventListener('load', () => {
+        document.getElementById(`loading${index + 1}`).style.display = 'none';
+      });
+      iframe.addEventListener('error', () => {
+        document.getElementById(`loading${index + 1}`).textContent = 'Error loading content';
+        document.getElementById(`loading${index + 1}`).style.color = '#dc3545';
+      });
+    });
+
+    // Refresh button (placeholder)
+    function refreshDashboard() {
+      document.querySelectorAll('iframe').forEach(iframe => {
+        iframe.contentWindow.location.reload();
+      });
+    }
+  </script>
+</body>
+</html>

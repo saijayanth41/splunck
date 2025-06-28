@@ -1,0 +1,6 @@
+severity,priority_code,priority_label
+critical,1,High
+high,2,Elevated
+medium,3,Normal
+low,4,Low
+informational,5,Info

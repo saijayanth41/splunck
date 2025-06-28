@@ -1,0 +1,5 @@
+<view template="admin" type="block">
+  <label>System Settings</label>
+  <field name="retry_attempts">Max Retry Attempts</field>
+  <field name="timeout">Request Timeout (seconds)</field>
+</view>

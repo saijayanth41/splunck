@@ -1,0 +1,5 @@
+<view template="admin" type="block">
+  <label>Template Management</label>
+  <field name="template_name">Template Name</field>
+  <field name="fields">Payload Fields</field>
+</view>

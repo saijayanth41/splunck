@@ -1,0 +1,27 @@
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[views]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[nav]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[app]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[alert_actions/auto_triage_one]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[collections/auto_triage_configs]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[restmap.conf]
+access = read : [ * ], write : [ admin ]
+export = system

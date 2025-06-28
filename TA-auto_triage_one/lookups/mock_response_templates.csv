@@ -1,0 +1,4 @@
+system,template
+servicenow,{"ticket_id": "SNOW-0001", "processing_time_ms": 150}
+jira,{"ticket_id": "JIRA-100", "processing_time_ms": 220}
+pagerduty,{"ticket_id": "PD-ALERT-500", "processing_time_ms": 180}

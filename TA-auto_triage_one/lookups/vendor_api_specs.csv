@@ -1,0 +1,4 @@
+vendor,base_url,auth_method,username,password,api_path,headers
+servicenow,https://example.service-now.com, basic_auth, admin, secret123, /api/now/table/incident, {"Content-Type": "application/json"}
+jira,https://example.atlassian.net, basic_auth, jira_user, jira_token, /rest/api/2/issue, {"Content-Type": "application/json"}
+pagerduty,https://api.pagerduty.com, token, pd_user, pd_token, /incidents, {"Accept": "application/vnd.pagerduty+json;version=2"}

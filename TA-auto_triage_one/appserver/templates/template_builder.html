@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Triage One: Template Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #fdfbfb, #ebedee);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin-top: 40px;
+            padding-bottom: 40px;
+        }
+        .section-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1a237e;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #3949ab;
+            box-shadow: 0 0 10px rgba(57, 73, 171, 0.3);
+        }
+        .btn {
+            border-radius: 8px;
+            padding: 10px 18px;
+        }
+        .preview-box {
+            background: #f5f5f5;
+            padding: 15px;
+            border-left: 4px solid #1a237e;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-box">
+            <div class="section-title">📦 Build Your Payload Template</div>
+
+            <div class="mb-3">
+                <label class="form-label">Template Name</label>
+                <input type="text" class="form-control" placeholder="e.g., ServiceNow Incident Template">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Select Target System</label>
+                <select class="form-select">
+                    <option selected>servicenow</option>
+                    <option>jira</option>
+                    <option>pagerduty</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Summary Template</label>
+                <input type="text" class="form-control" id="summaryTemplate" placeholder="🚨 Incident: $alert.alert_name$">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description Template</label>
+                <textarea class="form-control" id="descriptionTemplate" rows="3">Affected App: $alert.app$, Severity: $alert.severity$</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">JSON Body Template</label>
+                <textarea class="form-control" id="jsonTemplate" rows="6">
+{
+  "short_description": "$alert.alert_name$",
+  "description": "$alert.app$ issue detected with severity $alert.severity$",
+  "category": "infrastructure"
+}
+                </textarea>
+            </div>
+
+            <div class="preview-box mb-3" id="livePreview">
+                <strong>Live JSON Preview:</strong>
+                <pre>{
+  "short_description": "Database Down",
+  "description": "infra issue detected with severity critical",
+  "category": "infrastructure"
+}</pre>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-success">💾 Save Template</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const summaryField = document.getElementById('summaryTemplate');
+        const descriptionField = document.getElementById('descriptionTemplate');
+        const jsonField = document.getElementById('jsonTemplate');
+        const previewBox = document.getElementById('livePreview');
+
+        [summaryField, descriptionField, jsonField].forEach(input => {
+            input.addEventListener('input', () => {
+                const short = summaryField.value.replace('$alert.alert_name$', 'Database Down');
+                const desc = descriptionField.value.replace('$alert.app$', 'infra').replace('$alert.severity$', 'critical');
+                let json = jsonField.value
+                    .replace('$alert.alert_name$', 'Database Down')
+                    .replace('$alert.app$', 'infra')
+                    .replace('$alert.severity$', 'critical');
+
+                previewBox.innerHTML = `<strong>Live JSON Preview:</strong><pre>${json}</pre>`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<dashboard>
+  <label>Error Analysis</label>
+  <row>
+    <panel>
+      <title>Failure Log</title>
+      <table>
+        <search>
+          <query>
+            | inputlookup metrics_log.json 
+            | search status="failure" 
+            | table timestamp, alert_name, severity, errors
+          </query>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

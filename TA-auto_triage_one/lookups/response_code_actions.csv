@@ -1,0 +1,6 @@
+status_code,action,description
+200,success,Ticket created successfully
+400,retry,Client-side error – malformed request
+401,fail,Unauthorized – check credentials
+503,retry,Service unavailable – retry later
+500,fail,Server error – do not retry

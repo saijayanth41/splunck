@@ -1,0 +1,5 @@
+<view template="admin" type="block">
+  <label>Auto-Triage API Endpoints</label>
+  <field name="endpoint">API URL</field>
+  <field name="auth_method">Auth Method</field>
+</view>
