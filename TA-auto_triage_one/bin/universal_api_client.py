@@ -1,6 +1,3 @@
-# 📁 File: bin/universal_api_client.py
-# 🧠 Purpose: Mock REST client for ticket creation
-
 import time
 import random
 
