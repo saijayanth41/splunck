@@ -1,8 +1,3 @@
-# 📁 File: bin/payload_template_engine.py
-# 🧠 Purpose: Basic dynamic templating engine for alert payloads
-
-import re
-
 class PayloadTemplateEngine:
     def __init__(self):
         pass
