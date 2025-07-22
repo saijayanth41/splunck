@@ -1,6 +1,3 @@
-# 📁 File: bin/alert_orchestrator.py
-# 🧠 Purpose: Core engine for Auto-Triage One - Phase 1
-
 import json
 import traceback
 import time
@@ -36,7 +33,7 @@ class AlertOrchestrator:
 
         return result
 
-# 🧪 Local Test Block
+#  Local Test Block
 if __name__ == '__main__':
     orchestrator = AlertOrchestrator()
     sample_alert = {
