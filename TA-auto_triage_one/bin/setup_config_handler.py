@@ -45,10 +45,10 @@ class SetupConfigHandler(PersistentServerConnectionApplication):
             }
 
             kvstore.update('auto_triage_configs', 'config', entry)
-            return {'payload': '✅ Configuration saved!', 'status': 200}
+            return {'payload': 'Configuration saved!', 'status': 200}
 
         except Exception as e:
-            logging.exception("❌ Failed to save config")
+            logging.exception("Failed to save config")
             return {'payload': str(e), 'status': 500}
 
     def handle_get(self):
@@ -57,7 +57,7 @@ class SetupConfigHandler(PersistentServerConnectionApplication):
             result = kvstore.get('auto_triage_configs')
             return {'payload': result, 'status': 200}
         except Exception as e:
-            logging.exception("❌ Failed to retrieve config")
+            logging.exception("Failed to retrieve config")
             return {'payload': str(e), 'status': 500}
 
     def _get_kv_collection(self):
