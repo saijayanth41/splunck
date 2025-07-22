@@ -64,5 +64,5 @@ if __name__ == '__main__':
     }
 
     manager = CredentialManager(test_config)
-    print("✅ Valid config?", manager.is_valid())
-    print("🔐 Headers:", manager.get_auth_headers())
+    print("Valid config?", manager.is_valid())
+    print("Headers:", manager.get_auth_headers())
