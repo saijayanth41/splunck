@@ -1,6 +1,3 @@
-# 📁 File: bin/metrics_collector.py
-# 📊 Purpose: Collect performance and failure metrics for Auto-Triage One
-
 import time
 import json
 import logging
@@ -46,4 +43,4 @@ class MetricsCollector:
             with open(self.log_file, "a") as f:
                 f.write(json.dumps(data) + "\n")
         except Exception as e:
-            logging.error(f"❌ Failed to write metrics: {str(e)}")
+            logging.error(f"Failed to write metrics: {str(e)}")
