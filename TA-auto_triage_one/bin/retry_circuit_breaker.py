@@ -1,6 +1,3 @@
-# 📁 File: bin/retry_circuit_breaker.py
-# 🔄 Purpose: Retry logic with exponential backoff + circuit breaker
-
 import time
 import random
 import logging
@@ -23,7 +20,7 @@ class RetryManager:
         last_exception = None
 
         if self.circuit_open:
-            logging.warning("🚫 Circuit breaker is OPEN. Aborting execution.")
+            logging.warning("Circuit breaker is OPEN. Aborting execution.")
             raise Exception("Circuit breaker is open. Skipping execution.")
 
         while retries < self.max_retries:
@@ -35,21 +32,21 @@ class RetryManager:
                 retries += 1
                 last_exception = e
                 self.failure_count += 1
-                logging.warning(f"⚠️ Attempt {retries}/{self.max_retries} failed: {e}")
+                logging.warning(f"Attempt {retries}/{self.max_retries} failed: {e}")
 
                 if self.failure_count >= self.failure_threshold:
                     self.circuit_open = True
-                    logging.error("🚨 Circuit breaker TRIGGERED after repeated failures.")
+                    logging.error("Circuit breaker TRIGGERED after repeated failures.")
                     break
 
                 delay = self.exponential_backoff(retries)
-                logging.info(f"⏳ Retrying after {delay:.2f}s...")
+                logging.info(f"Retrying after {delay:.2f}s...")
                 time.sleep(delay)
 
         raise last_exception
 
 
-# 🧪 Test the retry logic
+# Test the retry logic
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
@@ -64,6 +61,6 @@ if __name__ == "__main__":
     retry_manager = RetryManager(max_retries=5)
     try:
         result, attempts = retry_manager.execute_with_retry(flaky_function)
-        logging.info(f"✅ Success after {attempts} attempts: {result}")
+        logging.info(f"Success after {attempts} attempts: {result}")
     except Exception as e:
-        logging.error(f"❌ Final failure: {str(e)}")
+        logging.error(f"Final failure: {str(e)}")
