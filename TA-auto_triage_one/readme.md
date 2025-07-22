@@ -1,101 +1,91 @@
 
 
-## **⚡ SUPREME TECHNICAL ARCHITECTURE**
+## ** TECHNICAL ARCHITECTURE**
 
 ### **CORE PLATFORM SPECIFICATIONS**
 
 ```
-🏗️ TA-AutoTriageOne-Supreme/
-├── 📁 bin/                              # Execution Engine (sample codes done)
-│   ├── 🧠 alert_orchestrator.py         # Master alert processor (500+ lines)
-│   ├── 🌐 universal_api_client.py       # Ultimate REST client (400+ lines)
-│   ├── 🎭 payload_template_engine.py    # Advanced templating system (300+ lines)
-│   ├── 🔄 retry_circuit_breaker.py      # Fault-tolerant retry logic (250+ lines)
-│   ├── 🎯 mock_api_simulator.py         # Comprehensive testing server (350+ lines)
-│   ├── 🔐 credential_manager.py         # Enterprise security handler (200+ lines)
-│   ├── 📊 metrics_collector.py          # Performance monitoring (180+ lines)
-│   ├── 🧪 test_harness.py              # Automated testing suite (400+ lines)
-│   └── 🛠️ config_validator.py          # Configuration validation (150+ lines)
+ TA-AutoTriageOne-Supreme/
+├──  bin/                              
+│   ├──  alert_orchestrator.py        
+│   ├──  universal_api_client.py      
+│   ├──  payload_template_engine.py   
+│   ├──  retry_circuit_breaker.py    
+│   ├──  mock_api_simulator.py       
+│   ├──  credential_manager.py       
+│   ├──  metrics_collector.py        
+│   ├──  test_harness.py             
+│   └──  config_validator.py         
 │
-├── 📁 default/                          # Configuration Foundation  (sample codes done)
-│   ├── ⚙️ alert_actions.conf           # Alert action definitions
-│   ├── ⚙️ app.conf                     # Application metadata
-│   ├── ⚙️ inputs.conf                  # Data inputs configuration
-│   ├── ⚙️ props.conf                   # Field extraction rules
-│   ├── ⚙️ transforms.conf              # Data transformation logic
-│   ├── ⚙️ macros.conf                  # Reusable search macros
-│   ├── ⚙️ savedsearches.conf           # Monitoring searches
-│   ├── ⚙️ collections.conf             # KV Store definitions
-│   └── ⚙️ server.conf                  # Server-level settings
+├──  default/                        
+│   ├──  alert_actions.conf          
+│   ├──  app.conf                     
+│   ├──  inputs.conf                  
+│   ├──  props.conf                   
+│   ├──  transforms.conf              
+│   ├──  macros.conf                  
+│   ├──  savedsearches.conf           
+│   ├──  collections.conf             
+│   └──  server.conf                  
 │
-├── 📁 appserver/                        # Web Interface Layer
-│   ├── 🌐 static/
-│   │   ├── 🎨 css/
-│   │   │   ├── auto_triage_main.css    # Primary styling (300+ lines)
-│   │   │   ├── dashboard_theme.css     # Dashboard aesthetics (200+ lines)
-│   │   │   └── mobile_responsive.css   # Mobile optimization (150+ lines)
-│   │   ├── 🚀 js/
-│   │   │   ├── config_wizard.js        # Setup wizard logic (500+ lines)
-│   │   │   ├── template_builder.js     # Visual template editor (400+ lines)
-│   │   │   ├── api_tester.js          # Live testing interface (250+ lines)
-│   │   │   ├── dashboard_controller.js # Dashboard interactions (300+ lines)
-│   │   │   └── validation_engine.js    # Client-side validation (200+ lines)
-│   │   └── 🖼️ images/
-│   │       ├── logo_variants/          # Professional branding assets
-│   │       ├── integration_icons/      # Vendor system icons
-│   │       └── workflow_diagrams/      # Technical documentation visuals
+├──  appserver/                       
+│   ├──  static/
+│   │   ├──  css/
+│   │   │   ├── auto_triage_main.css   
+│   │   │   ├── dashboard_theme.css    
+│   │   │   └── mobile_responsive.css  
+│   │   ├──  js/
+│   │   │   ├── config_wizard.js       
+│   │   │   ├── template_builder.js    
+│   │   │   ├── api_tester.js          
+│   │   │   ├── dashboard_controller.js
+│   │   │   └── validation_engine.js   
+│   │   └──  images/
+│   │       ├── logo_variants/         
+│   │       ├── integration_icons/      
+│   │       └── workflow_diagrams/      
 │   │
-│   └── 📋 templates/                           #(samplecode done)
-│       ├── setup_wizard.html           # Multi-step configuration UI
-│       ├── dashboard_template.html     # Monitoring dashboard template
-│       └── template_builder.html       # Payload builder interface
+│   └──  templates/                        
+│       ├── setup_wizard.html           
+│       ├── dashboard_template.html     
+│       └── template_builder.html       
 │
-├── 📁 default_ui/data/ui/                  # User Interface Components (sample done)
-│   ├── 📊 views/
-│   │   ├── auto_triage_dashboard.xml   # Executive monitoring dashboard
-│   │   ├── performance_analytics.xml   # Performance metrics view
-│   │   ├── error_analysis.xml          # Failure investigation dashboard
-│   │   ├── template_gallery.xml       # Pre-built template showcase
-│   │   └── system_health.xml          # Add-on health monitoring
+├──  default_ui/data/ui/                
+│   ├──  views/
+│   │   ├── auto_triage_dashboard.xml   
+│   │   ├── performance_analytics.xml   
+│   │   ├── error_analysis.xml          
+│   │   ├── template_gallery.xml       
+│   │   └── system_health.xml          
 │   │
-│   ├── 📋 manager/
-│   │   ├── auto_triage_endpoints.xml   # Endpoint configuration
-│   │   ├── template_management.xml     # Template CRUD operations
-│   │   ├── credential_storage.xml      # Secure credential management
-│   │   └── system_settings.xml        # Global configuration
+│   ├──  manager/
+│   │   ├── auto_triage_endpoints.xml   
+│   │   ├── template_management.xml     
+│   │   ├── credential_storage.xml      
+│   │   └── system_settings.xml        
 │   │
-│   └── 🎛️ nav/
-│       └── default.xml                 # Navigation structure
+│   └──  nav/
+│       └── default.xml                
 │
-├── 📁 lookups/                          # Reference Data (sample done)
-│   ├── 📈 vendor_api_specs.csv         # Supported system configurations
-│   ├── 📊 priority_mappings.csv        # Severity-to-priority translations
-│   ├── 🎯 response_code_actions.csv    # HTTP response handling rules
-│   ├── 🏢 tenant_configurations.csv    # Multi-tenant settings
-│   └── 🧪 mock_response_templates.csv  # Testing response templates
+├──  lookups/                          
+│   ├──  vendor_api_specs.csv        
+│   ├──  priority_mappings.csv       
+│   ├──  response_code_actions.csv   
+│   ├──  tenant_configurations.csv   
+│   └──  mock_response_templates.csv  
 │
-├── 📁 samples/                          # Reference Implementations
-│   ├── 🎯 sample_searches/             # Example alert searches
-│   ├── 📝 template_library/            # Pre-built payload templates  
-│   ├── 🔧 configuration_examples/      # Setup examples by vendor
-│   └── 🧪 test_scenarios/              # Comprehensive test cases
+├── samples/                          
+│   ├──  sample_searches/             
+│   ├──  template_library/              
+│   ├──  configuration_examples/      
+│   └──  test_scenarios/              
 │
-├── 📁 tests/                           # Quality Assurance Suite
-│   ├── 🧪 unit_tests/                 # Individual component tests
-│   ├── 🔗 integration_tests/          # End-to-end workflow tests
-│   ├── 📈 performance_tests/          # Load and stress testing
-│   ├── 🔐 security_tests/             # Security validation suite
-│   └── 📊 test_reports/               # Automated test reporting
-│
-└── 📚 documentation/                   # Comprehensive Documentation
-    ├── 📖 installation_guide.md       # Step-by-step installation
-    ├── 🚀 quick_start_guide.md        # 5-minute setup guide
-    ├── 🔧 configuration_manual.md     # Detailed configuration reference
-    ├── 🎯 use_case_examples.md        # Real-world implementation examples
-    ├── 🛠️ troubleshooting_guide.md    # Problem resolution guide
-    ├── 📊 api_reference.md            # Complete API documentation
-    ├── 🏗️ architecture_overview.md     # Technical architecture guide
-    └── 🎬 video_tutorials/            # Video demonstration library
+├──  tests/                           
+   ├──  unit_tests/                 
+   ├──  integration_tests/          
+   ├──  performance_tests/          
+   ├──  security_tests/             
+   └──  test_reports/               
 ```
 
 ---
