@@ -1,6 +1,3 @@
-# 📁 File: bin/credential_manager.py
-# 🔐 Purpose: Securely manage credentials for external system integration
-
 class CredentialManager:
     def __init__(self, config):
         self.config = config
@@ -57,7 +54,6 @@ class CredentialManager:
         return False
 
 
-# 🧪 Local Test
 if __name__ == '__main__':
     test_config = {
         "auth_method": "basic_auth",
